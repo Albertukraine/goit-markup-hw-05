@@ -787,12 +787,18 @@ img {
   height: 100vh;
 
   background-color: rgba(0, 0, 0, 0.1);
+  
+  
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
+  scale: 0%;
+  
 }
+
 
 .modal {
   
@@ -805,7 +811,20 @@ img {
   height: 581px;
   background-color: var(--background-body-color);
   border-radius: 4px;
+
+  transition: transform 300ms ease-in-out 200ms, opacity 300ms ease-in-out 200ms;
 }
+/* ANIMATION MODAL WINDOW */
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+}
+
+.backdrop .modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
 
 .close-modal-btn {
   position: absolute;
